@@ -22,6 +22,16 @@ metadata:
 spec:
   addresses:
   - 10.1.0.6-10.1.0.255
+
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: pool-2
+  namespace: metallb-system
+spec:
+  addresses:
+  - 172.172.39.39-172.172.39.39
   
 ---
 apiVersion: metallb.io/v1beta1
@@ -32,3 +42,4 @@ metadata:
 spec:
   ipAddressPools:
   - pool-1
+  - pool-2
